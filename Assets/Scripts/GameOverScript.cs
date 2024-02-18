@@ -9,7 +9,6 @@ public class GameOverScript : MonoBehaviour
     {
         if(manager.gameIsOver)
         {
-            manager.gameIsOver = false;
             UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
         }
     }
