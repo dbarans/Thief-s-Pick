@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GameOverScript : MonoBehaviour
 {
-    public Target targetScript;
+    public GameManager manager;
     private void OnMouseDown()
     {
-        if(targetScript.gameIsOver)
+        if(manager.gameIsOver)
         {
-            targetScript.gameIsOver = false;
+            manager.gameIsOver = false;
             UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
         }
     }
