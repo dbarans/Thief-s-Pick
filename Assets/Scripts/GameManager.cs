@@ -12,18 +12,22 @@ public class GameManager : MonoBehaviour
     public GameObject circleObject;
     public Target targetScript;
     public GameObject pointer;
-    public bool isClicked = false;
-    private int score = 0;
-    private int savedScore;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI pointsText;
+
+    [HideInInspector]
+    public bool isClicked = false;
+    [HideInInspector]
     public bool gameIsOver = false;
-    public int level = 1;
-    public int pointsToLevelUp = 1;
+
+    private int level = 1;
+    private int pointsToLevelUp = 1;
+    private int score = 0;
+    private int savedScore;
     private Vector3 startingPointerPos;
     private Color backgroundColor;
-    public bool isRestarted = false;
+    private bool isRestarted = false;
 
 
     private void Start()
@@ -88,7 +92,7 @@ public class GameManager : MonoBehaviour
         level++;
         savedScore = score;
         pointsToLevelUp = level;
-        levelText.text = "Level: " + level.ToString();
+        levelText.text = "Level " + level.ToString();
         pointsText.text = pointsToLevelUp.ToString();
         pointerScript.speed = pointerScript.startingSpeed;
     }
@@ -123,8 +127,6 @@ public class GameManager : MonoBehaviour
     }
     public void RestartGame()
     {
-        Debug.Log("Restarted");
         SceneManager.LoadScene("Game");
-        
     }
 }

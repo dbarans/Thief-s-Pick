@@ -7,15 +7,9 @@ public class PointerScript : MonoBehaviour
     public GameObject rotatingObj;
     public int startingSpeed;
     public int speed;
-    public int direction = -1;
     public int speedChange = 5;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [HideInInspector] public int direction = -1;
 
-    // Update is called once per frame
     void Update()
     {
         transform.RotateAround(rotatingObj.transform.position, Vector3.forward, speed * direction * Time.deltaTime);
