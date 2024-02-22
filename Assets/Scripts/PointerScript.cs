@@ -5,6 +5,7 @@ using UnityEngine;
 public class PointerScript : MonoBehaviour
 {
     public GameObject rotatingObj;
+    public int startingSpeed;
     public int speed;
     public int direction = -1;
     public int speedChange = 5;
@@ -34,4 +35,5 @@ public class PointerScript : MonoBehaviour
             direction = -1;
         }
     }
+
 }

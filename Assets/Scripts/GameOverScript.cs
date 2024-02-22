@@ -9,7 +9,7 @@ public class GameOverScript : MonoBehaviour
     {
         if(manager.gameIsOver)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+            manager.RestartLvl();
         }
     }
 }

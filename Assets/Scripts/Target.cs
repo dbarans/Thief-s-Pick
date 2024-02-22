@@ -6,8 +6,8 @@ using TMPro;
 
 public class Target : MonoBehaviour
 {
-    public PointerScript rotateAroundScript;
     public GameObject circleObject;
+    public GameObject pointer;
     public GameManager manager;
     public float radius;
     public bool isCollision = false;
@@ -49,7 +49,7 @@ public class Target : MonoBehaviour
             float newX = circleObject.transform.position.x + radius * Mathf.Cos(angle);
             float newY = circleObject.transform.position.y + radius * Mathf.Sin(angle);
             newPosition = new Vector3(newX, newY, 0f);
-        } while (Vector3.Distance(newPosition, transform.position) < minDistance);
+        } while (Vector3.Distance(newPosition, pointer.transform.position) < minDistance);
 
         transform.position = newPosition;
     }
